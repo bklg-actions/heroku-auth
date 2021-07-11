@@ -1,13 +1,12 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'heroku-auth'
+description: 'GitHub Action that adds your Heroku credentials to ~/.netrc for other jobs in your workflow.'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  api_key:
+    description: 'Your Heroku API key'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  email:
+    description: 'Your Heroku email address'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
